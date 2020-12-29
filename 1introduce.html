@@ -1,10 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>1introduce</title>
-</head>
-<body>
-  
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <title>1introduce</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script type="text/javascript">
+      /* 
+    window.onload = function(){
+      var btn01 = document.getElementById("btn01");
+      btn01.onclick = function(){
+        alert("button function");
+      };
+    };
+    */
+
+      //  alert($);
+
+      /* 
+  $(function(){  //表示頁面加載完成, 相當於 window.onload = function(){}
+    // var btn01 = document.getElementById("btn01");
+    // alert(btn01); // [object HTMLButtonElement]
+
+    //$("#id 屬性值"); 表示按 id 查詢標籤對象
+    // $("標籤名"); 根據指定的標籤名查詢標籤對象
+    // $(".class屬性值"); 類型選擇器 
+    var $btn01 = $("#btn01"); 
+    // alert($btn01);  // [object object]
+
+    //綁上 jquery 點擊事件
+    $btn01.click(function(){  
+      alert("jquery click event");
+    });
+  });
+  */
+
+      // 核心函數的作用
+
+      $(function () {
+        //頁面加載完之後自動調用
+        // alert("act after loaded");
+
+        // 創建 html 標籤
+        $(
+          "<div>" +
+            "<span>div-span1</span>" +
+            "<span>div-span2</span>" +
+            "</div>"
+        ).appendTo("body");
+
+        // alert($("button").length);
+
+        // 將 dom 對象轉換為 jquery 對象
+        var btn01 = document.getElementById("btn01");
+        alert(btn01);  // [object HTMLButtonElement]
+        alert($(btn01));  // [object object]
+
+      });
+    </script>
+  </head>
+  <body>
+    <button id="btn01">click me</button>
+    <button></button>
+    <button></button>
+  </body>
 </html>
