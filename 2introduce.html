@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>2introduce</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+
+  <script type="text/javascript">
+      /*
+    * 鏈式調用
+    * 讀寫合一
+    */
+    /* 
+    //  方式一: origin js
+    window.onload = function () {
+      var btn = document.getElementById('btn1');
+      btn.onclick = function () {
+        var username = document.getElementById('username').value;
+        alert(username);
+      }
+    };
+
+    // 方式二: jquery
+    $(function () {
+      // 加監聽, 綁定回調函數
+      $('#btn2').click(function  () {
+        var username = $("#username").val();
+        alert(username);
+      });
+    });
+
+        // 方式三: jQuery
+    jQuery(function () {
+      // 加監聽, 綁定回調函數
+      $('#btn3').click(function  () {
+        var username = $("#username").val();
+        alert(username);
+      });
+    });
+
+    
+    // 使用 jQuery 核心函數: $/jquery
+    // 使用 jQuery 核心對象: 執行 $() 返回的對象
+    console.log($,typeof $);
+    */
+
+    /* 
+    // 參數為函數，當 DOM 加載完後執行此回調函數
+    $(function(){
+      // 參數為選擇器字符串，查找所有匹配的標籤並將它們封裝成 jQuery對象
+      $("#btn4").click(function(){
+        // this 是什麼? 發生事件的 DOM 元素
+        // alert(this.innerHTML);
+        // 參數可以是 DOM 元素, .html()傳參數即寫, 沒傳即讀,將DOM對象封裝成 jQuery對象
+        alert($(this).html());
+        // 參數可以是 html 標籤字符串, 創建標籤對象並封裝成 jQuery對象
+        $("<br/><input type=\"text\" id=\"input\"><br/>").appendTo("div");
+      });
+    });
+    */
+
+    // 使用 $.each() 遍歷數組
+    var arr =[2,3,5,6];
+    $.each(arr,function(index,element){
+      console.log(index,element);
+    });
+
+    // 使用 $.trim() 去除兩端空格
+    let str = "    jack awesome     ";
+    console.log("---" + $.trim(str) + "---");
+    
+  </script>
+</head>
+<body>
+  <div>
+    username: <input type="text" id="username">
+    <button id="btn1">js origin</button>
+    <button id="btn2">js jquery$</button>
+    <button id="btn3">js jQuery</button>
+    <br/><br/>
+    input:<input type="text" id="input">
+    <button id="btn4">click me</button>
+    <br/><br/>
+
+  </div>
+</body>
+
+</html>
