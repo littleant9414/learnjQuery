@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>7formSelector</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+</head>
+<body>
+  <form>
+    username: <input type="text"/><br>
+    password: <input type="password"/><br>
+    hobby:
+    <input type="checkbox" checked="checked"/>basketball
+    <input type="checkbox"/>football
+    <input type="checkbox" checked="checked"/>pingpang <br>
+    gender:
+    <input type="radio" name="sex" value='male'/>male
+    <input type="radio" name="sex" value='female'/>female<br>
+    email: <input type="text" name="email" disabled="disabled"/><br>
+    location:
+    <select>
+      <option value="1">taipei</option>
+      <option value="2" selected="selected">taichung</option>
+      <option value="3">kaohsiung</option>
+    </select><br>
+    <input type="submit" value="submit"/>
+  </form>
+  <script type='text/javascript'>
+      // 選擇不可用的文本輸入框
+      // $(":text:disabled").css("background","red");
+
+      // 選擇 hobby 的個數
+      // console.log($(":checkbox:checked").length );
+      
+      // 顯示選擇的 location 名稱
+      $(":submit").click(function(){
+        var city = $("select>option:selected").html();
+        city = $("select").val();
+        alert(city);
+      });
+
+  </script>
+  
+</body>
+</html>
