@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>5hierarchySelector</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+</head>
+<body>
+  <ul>
+    <li>AAAAA</li>
+    <li class="box">CCCCC</li>
+    <li title="hello"><span>BBBBB</span></li>
+    <li title="hello"><span class="box">DDDD</span></li>
+    <span>EEEEE</span>
+  </ul>
+  <script type='text/javascript'>
+    // 選擇所有 ul 下的所有 span
+    // $("ul span").css("background","yellow");
+
+    // 選中 ul 下的所有子元素 span
+    // $("ul > span").css("background","yellow");
+
+    // 選擇 class 為 box 的下一個 li
+    // $(".box + li").css("background","yellow");
+
+    // 選擇 ul 下的 class 為 box 的元素後面的所有兄弟元素
+    $("ul .box~*").css("background","yellow");
+  </script>
+  
+</body>
+</html>
