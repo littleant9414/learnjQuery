@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <title>4jQueryCoreFunction</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  </head>
+
+  <body>
+    <div id="div1" class="box">div1(class="box")</div>
+    <div id="div2" class="box">div2(class="box")</div>
+    <div id="div3">div3</div>
+    <span class="box">span(class="box")</span>
+    <br />
+    <ul>
+      <li>AAAAA</li>
+      <li title="hello">BBBBB(title="hello")</li>
+      <li class="box">CCCCC(class="box")</li>
+      <li title="hello">DDDDDD(title="hello")</li>
+    </ul>
+
+  <script type='text/javascript'>
+    // 選擇 id 為 div1 的元素
+    $("#div1").css("background","red");
+
+    // 選擇所有的 div
+    $("div").css("background","red");
+
+    // 選擇所有 class 屬性為 box 的元素
+    $(".box").css("background","red")
+    
+    // 選擇所有 div 和 span 元素
+    $("div,span").css("background","red")
+    
+    // 選擇所有 class 屬性為 box 的 div 元素
+    $("div.box").css("background","red")
+  </script>
+  
+  </body>
+
+</html>
