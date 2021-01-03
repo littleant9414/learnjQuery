@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>6filterSelector</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+</head>
+<body>
+<div id="div1" class="box">class为box的div1</div>
+<div id="div2" class="box">class为box的div2</div>
+<div id="div3">div3</div>
+<span class="box">class为box的span</span>
+<br/>
+<ul>
+  <li>AAAAA</li>
+  <li title="hello">BBBBB</li>
+  <li class="box">CCCCC</li>
+  <li title="hello">DDDDDD</li>
+  <li title="two">BBBBB</li>
+  <li style="display:none">i was hidden</li>
+</ul>
+<script type='text/javascript'>
+  // 選擇第一個 div
+  // $("div:first").css("background","red");
+
+  // 選擇最後一 class 為 box 的元素
+  // $(".box:last").css("background","red");
+
+  // 選擇所有 class 不為 box 的 div
+  // $("div:not(.box)").css("background","red");
+  
+  // 選擇第二個和第三個 li (過濾選擇器依次執行)
+  // $("li:gt(0):lt(2)").css("background","red");
+  
+  // 選擇內容為 BBBBB 的 li
+  // $("li:contains(\"BBBBB\")").css("background","red");
+  
+  // 選擇隱藏的 li
+  // console.log($("li:hidden").length,$("li:hidden")[0]);
+  
+  // 選擇有 title 屬性的 li 元素
+  // $("li[title]").css("background","red");
+
+  // 選擇所有屬性 title 為 hello 的 li 元素
+  $("li[title=\"hello\"]").css("background","red");
+</script>
+
+</body>
+</html>
