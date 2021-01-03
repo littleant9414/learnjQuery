@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <title>8methods</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  </head>
+
+  <body>
+    <script type='text/javascript'>
+      // $.each(): 遍歷數組或對象中的方法
+      var obj = {
+        name: "Tom",
+        setName:function(name){
+          this.name = name;
+        }
+      };
+      $.each(obj,function(key,value){
+        console.log(key,value); //name... setName...
+        
+      });
+      
+      // $.type(obj): 獲取數據類型
+        console.log($.type($)); //function
+        
+      // $.isArray(obj): 判斷是否是數組
+        console.log($.isArray($("body")),$.isArray([])); //false true
+        
+      // $.isFunction(obj): 判斷是否是函數
+        console.log($.isFunction($)); //true
+        
+
+      // $.parseJSON(json): 解析 json 字符串轉換為 js對象/數組
+        var json = '{"name":"Json","age":12} ' //json 對象{}
+        console.log($.parseJSON(json));
+        json = '[{"name":"Json","age":12},{"name":"Json","age":12}]';
+        console.log($.parseJSON(json));
+        
+        // JSON.parse(jsonSting) json字符串 > js對象/數組
+        // JSON.stringify(jsObj/jsArr)  js字符串 > json對象/數組
+    </script>
+
+  </body>
+
+</html>
