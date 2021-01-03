@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>3jQueryObject</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  </head>
+
+  <body>
+    <button>test1</button>
+    <button>test2</button>
+    <button id="btn3">test3</button>
+    <button>test4</button>
+
+  <script type='text/javascript'>
+    // jQuery 內部包含的是 DOM 元素對象的偽數組(即使只有一個元素)
+    // 偽數組: Object, Lehgth屬性, 數值下標屬性
+    // 自定義偽數組
+    console.log($btns instanceof Array); //false
+    var falseArr = {};
+    falseArr.length=0;
+    falseArr[0] = "a";
+    falseArr.length =1;
+    falseArr[1] = 123;
+    falseArr.length =2;
+    for(var i = 0 ; i < falseArr.length ; i++){
+      var obj = falseArr[i];
+      console.log(i,obj);
+    };
+    console.log(falseArr.forEach); //undefined
+    
+    
+    // 統計共有多少按紐
+    var $btns = $("button");
+    console.log($btns.size(), $btns.length);
+
+    // 取出第二個按紐的文本
+    console.log($btns[1].innerHTML,$btns.get(1).innerHTML);
+    
+    // 輸出所有 button 標籤的文本
+    $btns.each(function(index,domEle){
+      console.log(index,domEle.innerHTML,this);
+    })
+    $btns.each(function(){
+      console.log(this.innerHTML);
+      
+    });
+
+    // 輸出 test3 按紐是所有按紐中第幾個按紐
+    console.log($("#btn3").index());
+    
+  </script>
+
+  </body>
+</html>
