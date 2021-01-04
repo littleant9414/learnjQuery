@@ -102,7 +102,7 @@
 
 	<div id="formDiv">
 	
-		<h4>添加新员工</h4>
+		<h4>添加用戶</h4>
 
 		<table>
 			<tr>
@@ -157,8 +157,9 @@
 			.append('<td>' + salary + '</td>') 
 			.append('<td><a href="deleteEmp?id="'+Date.now()+'>Delete</a></td>')
 			.appendTo("#employeeTable>tbody")
-			.find("a")
-			.click(clickDelete)
+			// 方法一
+			// .find("a")
+			// .click(clickDelete);
 
       // 清除輸入的數據
 			$empName.val("");
@@ -166,8 +167,11 @@
 			$salary.val("");
 		});
 
-		// 刪除按紐
-		$("#employeeTable a").click(clickDelete);
+		// 刪除按紐 方法一
+		// $("#employeeTable a").click(clickDelete);
+
+		// 方法二
+		$("#employeeTable").delegate("a","click",clickDelete);
 
 		// 刪除鏈接
 		function clickDelete (){
