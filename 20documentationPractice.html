@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+	<title>20documentationPractice.html</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <style type="text/css">
+	<style type='text/css'>
+		#total {
+			width: 450px;
+			margin-left: auto;
+			margin-right: auto;
+		}
+
+		ul {
+			list-style-type: none;
+		}
+
+		li {
+			border-style: solid;
+			border-width: 1px;
+			padding: 5px;
+			margin: 5px;
+			background-color: #99ff99;
+			float: left;
+		}
+
+		.inner {
+			width: 400px;
+			border-style: solid;
+			border-width: 1px;
+			margin: 10px;
+			padding: 10px;
+			float: left;
+		}
+
+		#employeeTable {
+			border-spacing: 1px;
+			background-color: black;
+			margin: 80px auto 10px auto;
+		}
+
+		th,td {
+			background-color: white;
+		}
+
+		#formDiv {
+			width: 250px;
+			border-style: solid;
+			border-width: 1px;
+			margin: 50px auto 10px auto;
+			padding: 10px;
+		}
+
+		#formDiv input {
+			width: 100%;
+		}
+
+		.word {
+			width: 40px;
+		}
+
+		.inp {
+			width: 200px;
+		}
+		#employeeTable, #employeeTable th, #employeeTable td{
+			border: 1px solid;
+			border-spacing: 0;
+
+		}
+	</style>
+	
+</head>
+<body>
+  
+	<table id="employeeTable">
+		<tr>
+			<th>Name</th>
+			<th>Email</th>
+			<th>Salary</th>
+			<th>&nbsp;</th>
+		</tr>
+		<tr>
+			<td>Tom</td>
+			<td>tom@tom.com</td>
+			<td>5000</td>
+			<td><a href="deleteEmp?id=001">Delete</a></td>
+		</tr>
+		<tr>
+			<td>Jerry</td>
+			<td>jerry@sohu.com</td>
+			<td>8000</td>
+			<td><a href="deleteEmp?id=002">Delete</a></td>
+		</tr>
+		<tr>
+			<td>Bob</td>
+			<td>bob@tom.com</td>
+			<td>10000</td>
+			<td><a href="deleteEmp?id=003">Delete</a></td>
+		</tr>
+	</table>
+
+	<div id="formDiv">
+	
+		<h4>添加新员工</h4>
+
+		<table>
+			<tr>
+				<td class="word">name: </td>
+				<td class="inp">
+					<input type="text" name="empName" id="empName" />
+				</td>
+			</tr>
+			<tr>
+				<td class="word">email: </td>
+				<td class="inp">
+					<input type="text" name="email" id="email" />
+				</td>
+			</tr>
+			<tr>
+				<td class="word">salary: </td>
+				<td class="inp">
+					<input type="text" name="salary" id="salary" />
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2" align="center">
+					<button id="addEmpButton" value="abc">
+						Submit
+					</button>
+				</td>
+			</tr>
+		</table>
+
+	</div>
+  <script type='text/javascript'>
+    // 添加監聽
+    $("#addEmpButton").click(function(){
+      // 收集輸入的數據
+      var $empName = $("#empName");
+      var $email = $("#email");
+      var $salary = $("#salary");
+      var empName = $empName.val();
+      var email = $email.val();
+      var salary = $salary.val();
+
+      // 生成對應的 tr 並插入到 tbody
+      /* 
+      <td>Bob</td>
+			<td>bob@tom.com</td>
+			<td>10000</td>
+			<td><a href="deleteEmp?id=003">Delete</a></td>
+      */
+			$("<tr></tr>")
+			.append('<td>' + empName + '</td>') 
+			.append('<td>' + email + '</td>') 
+			.append('<td>' + salary + '</td>') 
+			.append('<td><a href="deleteEmp?id="'+Date.now()+'>Delete</a></td>')
+			.appendTo("#employeeTable>tbody")
+			.find("a")
+			.click(clickDelete)
+
+      // 清除輸入的數據
+			$empName.val("");
+			$email.val("");
+			$salary.val("");
+		});
+
+		// 刪除按紐
+		$("#employeeTable a").click(clickDelete);
+
+		// 刪除鏈接
+		function clickDelete (){
+			var $tr = $(this).parent().parent();
+			var name = $tr.children(":first").html();
+			if(confirm("are you sure to delete"+ name + "?")){
+				$tr.remove()
+			}
+			return false;
+		}
+
+  </script>
+</body>
+</html>
