@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>19documentation</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <style type="text/css">
+    * {
+      margin: 0px;
+    }
+  
+    .div1 {
+      position: absolute;
+      width: 200px;
+      height: 200px;
+      top: 20px;
+      left: 10px;
+      background: blue;
+    }
+  
+    .div2 {
+      position: absolute;
+      width: 100px;
+      height: 100px;
+      /*top: 50px;*/
+      background: red;
+    }
+  
+    .div3 {
+      position: absolute;
+      top: 250px;
+    }
+  </style>
+</head>
+<body>
+  <ul id="ul1">
+    <li>AAAAA</li>
+  
+    <li title="hello">BBBBB</li>
+    <li class="box">CCCCC</li>
+  
+    <li title="hello">DDDDDD</li>
+    <li title="two">EEEEE</li>
+    <li>FFFFF</li>
+  
+  </ul>
+  <br>
+  <br>
+  <ul id="ul2">
+    <li>aaa</li>
+    <li title="hello">bbb</li>
+    <li class="box">ccc</li>
+    <li title="hello">ddd</li>
+    <li title="two">eee</li>
+  </ul>
+  <script type='text/javascript'>
+    // 向 id 為 ul1 的 ul 下添加一個 span(最後)
+    var $ul1 = $("#ul1");
+    $ul1.append("<span>append add span(last)</span>");
+    
+    // 向 id 為 ul1 的 ul 下添加一個 span(最後)
+    $ul1.prepend("<span>append add span(prev)</span>");
+
+    // 在 id 為 ul1 的 ul 下的 li (title:hello) 前面添加 span
+    $ul1.children("li[title='hello']").before("<span>before  add span(prev)</span>")
+
+    // 在 id 為 ul1 的 ul 下的 li (title:hello) 後面添加 span
+    $ul1.children("li[title='hello']").after("<span>after  add span(prev)</span>")
+
+    // 將 id 為 ul2 的 ul 下的 li (title:hello) 全部替換為 p
+    $("#ul2>li[title='hello']").replaceWith("<p>replace  li to p</p>");
+
+    // 移除 id 為 ul2 的 ul 下的所有 li
+    $("#ul2>li").remove();
+
+  </script>
+    
+</body>
+</html>
