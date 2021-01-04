@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>13scroll</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+</head>
+<body style="height: 2000px;">
+  <div style="border:1px solid black;width:100px;height:150px;overflow:auto">
+    This is some text. This is some text. This is some text. This is some text.
+    This is some text. This is some text. This is some text. This is some text.
+    This is some text. This is some text. This is some text. This is some text.
+    This is some text. This is some text. This is some text. This is some text.
+    This is some text. This is some text. This is some text. This is some text.
+    This is some text. This is some text. This is some text. This is some text.
+    his is some text.
+  </div>
+  <br>
+  <br>
+  <br>
+  <button id="btn1">get scrollTop</button>
+  <button id="btn2">set scrollTop</button>
+  <script type='text/javascript'>
+    // 得到 div 或頁面滾動條的坐標
+    $("#btn1").click(function(){
+      console.log($("div").scrollTop());
+      // console.log($("html").scrollTop() + $("body").scrollTop());
+      // document.documentElement 效率高
+      console.log($(document.documentElement).scrollTop() + $(document.body).scrollTop());
+    });
+    
+    // 讓 div 或頁面的滾動條滾動到指定位置
+    $("#btn2").click(function(){
+      $("div").scrollTop(200);
+      $("html,body").scrollTop(200);
+    });
+  </script>
+  
+  
+</body>
+</html>
