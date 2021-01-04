@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>23eventAssign</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+</head>
+<body>
+  <ul>
+    <li>11111</li>
+    <li>1111111</li>
+    <li>111111111</li>
+    <li>11111111111</li>
+  </ul>
+  
+  <li>22222</li>
+  <br>
+  <button id="btn">add li</button>
+  <button id="btn2">remove event assign</button>
+  <br>
+  <script type='text/javascript'>
+  // 20documentationPractice.html 使用事件委託效率較高
+
+/*     $("ul>li").click(function(){
+      this.style.background = "red";
+    }) */
+    $("#btn").click(function(){
+      $("ul").append("<li>add li</li>");
+    })
+    // 事件委託給父元素
+    $("ul").delegate("li","click",function(){
+      this.style.background = "red";
+    });
+    // 事件委託移除
+    $("#btn2").click(function(){
+      $("ul").undelegate("click");
+    });
+  </script>
+  
+</body>
+</html>
