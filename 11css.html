@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <title>11css</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  </head>
+
+  <body>
+    <p style="color: blue;">speedy</p>
+    <p style="color: green;">slowly</p>
+    <script type='text/javascript'>
+      // 得到第一個 p 標籤
+      // console.log($("p:first").css("color"));
+      
+      // 設置所有 p 標籤的文本顏色為 red
+      // $("p").css("color","red");
+
+      // 設置第二個 p 標籤的字體顏色為#ff0011 background:blue width:300px height:30px
+      $("p:eq(1)").css({
+        color:"#ff0011",
+        background:"blue",
+        width:300,
+        height:30
+      });
+
+    </script>
+    
+  </body>
+
+</html>
