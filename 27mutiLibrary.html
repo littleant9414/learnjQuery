@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>27mutiLibrary</title>
+  <!-- <script type='text/javascript' src="27mutiLibrary.js"></script> -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  
+  <style type="text/css">
+    * {
+      margin: 0px auto;
+    }
+
+    .div1 {
+      position: absolute;
+      width: 100px;
+      height: 100px;
+      top: 50px;
+      left: 10px;
+      background: red;
+    }
+    img{
+      width: 500px;
+      height: 400px;
+      position: absolute;
+      top: 50px;
+      left: 50px;
+    }
+  </style>
+</head>
+<body>
+  <img id="logo" src="images/1.jpg" alt="coast">
+  <script type='text/javascript'>
+    // jQuery.noConflict();
+    // 調用自定義函數庫
+    // $();
+
+    // jQuery 函數庫只能使用 jQuery
+    // jQuery(function(){
+      // console.log("jQuery library");
+    // });
+
+
+    console.log($("#logo").width());
+
+    window.onload = function(){
+      console.log("onload",$("#logo").width());
+    };
+    window.onload = function(){
+      console.log("onload2",$("#logo").width());
+    };
+    
+    $(function(){
+      console.log("ready", $("#logo").width()); 
+    });
+    $(function(){
+      console.log("ready2", $("#logo").width()); 
+    });
+
+    $("#logo").on("load",function(){
+      console.log("imgload",$(this).width());
+    })
+
+</script>
+</body>
+</html>
