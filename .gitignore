@@ -165,3 +165,6 @@ Package Control.merged-ca-bundle
 Package Control.user-ca-bundle
 oscrypto-ca-bundle.crt
 bh_unicode_properties.cache
+
+# jQuery plugins
+jquery-validation-1.15.0/*
