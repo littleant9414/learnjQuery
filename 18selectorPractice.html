@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>18selectorPractice</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+</head>
+<body>
+  <form>
+    your favor sport?<input type="checkbox" id="checkedAllBox"/>selectALL/unselectALL
+  
+    <br/>
+    <input type="checkbox" name="items" value="football"/>football
+    <input type="checkbox" name="items" value="basketball"/>basketball
+    <input type="checkbox" name="items" value="badiminton"/>badiminton
+    <input type="checkbox" name="items" value="pingpong"/>pingpong
+    <br/>
+    <input type="button" id="checkedAllBtn" value="selectALL"/>
+    <input type="button" id="checkedNoBtn" value="unselectALL"/>
+    <input type="button" id="checkedRevBtn" value="reverseSelect"/>
+    <input type="button" id="sendBtn" value="submit"/>
+  </form>
+  <script type='text/javascript'>
+    var $checkedAllBox = $("#checkedAllBox");
+    var $items = $(":checkbox[name=items]");
+
+    $("#checkedAllBtn").click(function(){
+      $items.prop("checked",true);
+      $checkedAllBox.prop("checked",true);
+    });
+    
+    $("#checkedNoBtn").click(function(){
+      $items.prop("checked",false);
+      $checkedAllBox.prop("checked",false);
+    });
+    
+    $("#checkedRevBtn").click(function(){
+      $items.each(function(){
+        this.checked = !this.checked;
+      });
+      // 查找有幾個不選中的
+      $checkedAllBox.prop("checked",$items.filter(":not(:checked)").length===0);
+    });
+
+    $("#sendBtn").click(function(){
+      $items.filter(":checked").each(function(){
+        alert(this.value);
+      });
+    });
+
+    $checkedAllBox.click(function(){
+      $items.prop("checked",this.checked);
+    });
+
+    $items.click(function(){
+      $checkedAllBox.prop("checked",$items.filter(":not(:checked)").length===0);
+    });
+
+
+  </script>
+  
+</body>
+</html>
