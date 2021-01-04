@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <title>25effect</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <style type="text/css">
+      * {
+        margin: 0px;
+      }
+
+      .div1 {
+        position: absolute;
+        width: 200px;
+        height: 200px;
+        top: 200px;
+        left: 10px;
+        background: red;
+      }
+
+    </style>
+
+  </head>
+
+  <body>
+    <button id="btn1">fade out</button>
+    <button id="btn2">fade in</button>
+    <button id="btn3">fade exchange</button>
+    <br/><br/>
+
+    <button id="btn4">shrink</button>
+    <button id="btn5">extend</button>
+    <button id="btn6">sliding exchange</button>
+    <br/><br/>
+
+    <button id="btn7">show</button>
+    <button id="btn8">hide</button>
+    <button id="btn9">toggle</button>
+    <br/><br/>
+
+    <button id="btna">extend</button>
+    <button id="btnb">move to exact location</button>
+    <button id="btnc">move exact distance</button>
+    <button id="btnd">stop animation</button>
+    <div class="div1">
+    </div>
+    <script type='text/javascript'>
+      var $div1 = $(".div1")
+      $("#btn1").click(function() {
+        $div1.fadeOut(3000,function(){
+          alert("effect completed");
+        });
+      })
+      $("#btn2").click(function() {
+        $div1.fadeIn(3000);
+      })
+      $("#btn3").click(function() {
+        $div1.fadeToggle(3000);
+      })
+      
+      $("#btn4").click(function() {
+        $div1.slideUp();
+      })
+      $("#btn5").click(function() {
+        $div1.slideDown();
+      })
+      $("#btn6").click(function() {
+        $div1.slideToggle();
+      })
+
+      $("#btn7").click(function() {
+        $div1.show(3000);
+      })
+      $("#btn8").click(function() {
+        $div1.hide(3000);
+      })
+      $("#btn9").click(function() {
+        $div1.toggle(3000);
+      })
+      
+      $("#btna").click(function() {
+        $div1.animate({
+          width:300,
+        },1000)
+        .animate({
+          height:300,
+        },1000)
+      })
+      $("#btnb").click(function() {
+        $div1.animate({
+          left:500,
+          top:300
+        },2000)
+      })
+      $("#btnc").click(function() {
+        $div1.animate({
+          left:"+=500",
+          top:"+=300"
+        })
+      })
+      $("#btnd").click(function() {
+        $div1.stop();
+      })
+    </script>
+    
+  </body>
+
+</html>
