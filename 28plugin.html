@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <title>28plugin</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script type='text/javascript' src="28jQueryPlugin.js"></script>
+
+    <style type="text/css">
+      * {
+        margin: 0px;
+      }
+
+      .div1 {
+        position: absolute;
+        width: 100px;
+        height: 100px;
+        top: 50px;
+        left: 10px;
+        background: red;
+      }
+    </style>
+  </head>
+
+  <body>
+    <input type="checkbox" name="items" value="soccer" />soccer
+    <input type="checkbox" name="items" value="basketball" />basketball
+    <input type="checkbox" name="items" value="badmindton" />badmindton
+    <input type="checkbox" name="items" value="pingpong" />pingpong
+    <br />
+    <input type="button" id="checkedAllBtn" value="selectALL" />
+    <input type="button" id="checkedNoBtn" value="unselectALL" />
+    <input type="button" id="reverseCheckedBtn" value="reverse" />
+
+    <script type='text/javascript'>
+      console.log($.min(3, 5), $.max(3, 5));
+      var string = "  my trimTest   ";
+      console.log("----" + $.leftTrim(string) + "----");
+      console.log("----" + $.rightTrim(string) + "----");
+
+      var $items = $(":checkbox[name=items]");
+      $("#checkedAllBtn").click(function(){
+        $items.checkAll();
+      })
+      $("#checkedNoBtn").click(function(){
+        $items.unCheckAll();
+      })
+      $("#reverseCheckedBtn").click(function(){
+        $items.reverseCheck();
+      })
+    </script>
+
+  </body>
+
+</html>
