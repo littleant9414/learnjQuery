@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <title>17search</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  </head>
+
+  <body>
+    <div id="div1" class="box" title="one">class 為 box 的 div1</div>
+    <div id="div2" class="box">class 為 box 的 div2</div>
+    <div id="div3">div3</div>
+    <span class="box">class 為 box 的 span</span>
+    <br />
+    <div>
+      <ul>
+        <span>span 文本1</span>
+        <li>AAAAA</li>
+        <li title="hello" class="box2">BBBBB</li>
+        <li class="box" id='cc'>CCCCC</li>
+        <li title="hello">DDDDDD</li>
+        <li title="two"><span>span 文本2</span></li>
+        <span>span 文本3</span>
+      </ul>
+      <span>span 文本444</span><br>
+      <li>eeeee</li>
+      <li>EEEEE</li>
+      <br>
+    </div>
+    <script type='text/javascript'>
+      var $ul = $("ul");
+      // 查找 ul 標籤下的第二個 span 子標籤
+      // $ul.children("span:eq(1)").css("background","red");
+
+      // 查找 ul 標籤下的第二個 span 的後代標籤
+      // $ul.find("span:eq(1)").css("background","red");
+
+      // 查找 ul 標籤的父標籤
+      // $ul.parent().css("background","red");
+      // $ul.parent().parent().css("background","red");
+
+      // 查找 id 為 cc 的 li 標籤前面的所有 li 標籤
+      var $li = $("#cc");
+      // $li.prevAll("li").css("background","red");
+
+      // id 為 cc 的 li 標籤的所有兄弟 li 標籤
+      $li.siblings("li").css("background","red");
+
+    </script>
+    
+  </body>
+
+</html>
