@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>15size</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <style>
+    div {
+      width: 100px;
+      height: 150px;
+      background: red;
+      padding: 10px;
+      border: 10px #fbd850 solid;
+      margin: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div>div</div>
+  <script type='text/javascript'>
+    var $div = $("div");
+    // 內容大小
+    console.log($("div").width(),$("div").height()); //100 150
+    // 內部大小
+    console.log($div.innerWidth(),$div.innerHeight()); //120 170 
+    // 外部大小
+    console.log($div.outerWidth(),$div.outerHeight()); // 140 190
+    console.log($div.outerWidth(true),$div.outerHeight(true)); // 傳 true,加上 margin 160 210
+    confirm
+
+    
+    
+  </script>
+  
+</body>
+</html>
