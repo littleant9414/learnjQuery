@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>26navigator</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <style rel="stylesheet">
+    * {
+      margin: 0;
+      padding: 0;
+      word-wrap: break-word;
+      word-break: break-all;
+    }
+
+    body {
+      background: #FFF;
+      color: #333;
+      font: 12px/1.6em Helvetica, Arial, sans-serif;
+    }
+
+    a {
+      color: #0287CA;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    ul, li {
+      list-style: none;
+    }
+
+    img {
+      border: none;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      font-size: 1em;
+    }
+
+    html {
+      overflow: -moz-scrollbars-vertical; /* 在Firefox下始终显示滚动条*/
+    }
+
+    #navigation {
+      width: 784px;
+      padding: 8px;
+      margin: 8px auto;
+      background: rgba(50, 52, 189, 0.3);
+      height: 18px;
+    }
+
+    #navigation ul li {
+      float: left;
+      margin-right: 10px;
+      text-align: center;
+      position: relative;
+      z-index: 100;
+    }
+
+    #navigation ul li a {
+      width:90px;
+      display: block;
+      padding: 0 8px;
+      text-align: center;
+      background: rgba(22, 59, 226, 0.3)
+      font-weight: 700;
+    }
+
+    #navigation ul li a:hover {
+      background: none;
+      color: #fff;
+    }
+
+    #navigation ul li ul {
+      background-color: rgba(35, 209, 64, 0.9);
+      position: absolute;
+      width: 100%;
+      overflow: hidden;
+      display: none;
+    }
+
+    #navigation ul li ul li {
+      border-bottom: 1px solid #BBB;
+      text-align: left;
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+  <div id="navigation">
+    <ul>
+      <li><a href="#">home</a></li>
+      <li><a href="#">shirt</a>
+        <ul>
+          <li><a href="#">short sleeve</a></li>
+          <li><a href="#">long sleeve</a></li>
+          <li><a href="#">sleeveless</a></li>
+        </ul>
+      </li>
+      <li><a href="#">underclothes</a>
+        <ul>
+          <li><a href="#">cardigan</a></li>
+          <li><a href="#">hedging</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="#">pants</a>
+        <ul>
+          <li><a href="#">casual</a></li>
+          <li><a href="#">khaki</a></li>
+          <li><a href="#">jeans</a></li>
+          <li><a href="#">shorts</a></li>
+        </ul>
+      </li>
+      <li><a href="#">contact us</a></li>
+    </ul>
+  </div>
+  <script type='text/javascript'>
+    $("#navigation>ul>li:has(ul)").hover(function() {
+      $(this).children("ul").stop().slideDown();
+    },function(){
+      $(this).children("ul").slideUp();
+    })
+  </script>
+  
+</body>
+</html>
