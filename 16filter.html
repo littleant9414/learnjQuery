@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>16filter</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+</head>
+<body>
+  <ul>
+    <li>AAAAA</li>
+    <li title="hello" class="box2">BBBBB</li>
+    <li class="box">CCCCC</li>
+    <li title="hello">DDDDDD</li>
+    <li title="two"><span>BBBBB</span></li>
+  </ul>
+  <li>eeeee</li>
+  <li>EEEEE</li>
+  <br>
+  <script type='text/javascript'>
+      // 篩選後結果仍是元素其中之一或多
+      // 查找後結果為後代元素
+
+      // ul 下第一個 li 
+      var $lis = $("ul>li")
+      // $lis.first().css("background","red");
+      
+      // ul 下最後一個 li 
+      // $lis.last().css("background","red");
+      
+      // ul 下第二個 li 
+      // $lis.eq(1).css("background","red");
+      
+      // ul 下 title 屬性為 hello 的 li 
+      // $lis.filter("[title=\"hello\"]").css("background","red");
+      
+      // ul 下 title 屬性不為 hello 的 li 
+      // $lis.not("[title=\"hello\"]").css("background","red");
+      // $lis.filter("[title != \"hello\"]").css("background","red");
+      
+      // ul 下 有 span 子標籤的 li 
+      $lis.has("span").css("background","red");
+
+
+  </script>
+  
+</body>
+</html>
