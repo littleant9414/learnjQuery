@@ -167,7 +167,8 @@ oscrypto-ca-bundle.crt
 bh_unicode_properties.cache
 
 # jQuery plugins
-jquery-validation-1.15.0/*
 jquery-validation-1.19.2/*
-jquery-ui-1.11.4/*
+!jquery-validation-1.19.2/lib/*
+!jquery-validation-1.19.2/dist/*
 laydate-v1.1/*
+!laydate-v1.1/laydate/*
