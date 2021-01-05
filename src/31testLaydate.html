@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>31testLaydate</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script type='text/javascript' src="../laydate-v1.1/laydate/laydate.js"></script>
+
+</head>
+<body>
+  <input placeholder="enter date" class="laydate-icon" onclick="laydate()">
+  <br/><br/>
+  <input class="laydate-icon" id="demo" value="2014-6-25更新">
+
+  <script type="text/javascript">
+    ;!function(){
+    
+    laydate.skin('molv');
+    
+    laydate({
+       elem: '#demo'
+    })
+    
+    }();
+    </script>
+</body>
+</html>
