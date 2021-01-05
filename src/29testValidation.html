@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>29testValidation</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script type='text/javascript' src="../jquery-validation-1.19.2/lib/jquery-1.11.1.js"></script>
+    <script type='text/javascript' src="../jquery-validation-1.19.2/dist/jquery.validate.js"></script>
+    <style type='text/css'>
+    .error{
+      color:red;
+    }
+  </style>
+  
+</head>
+<body>
+  <form id="myform" action="xxx">
+    <p>username: 
+      <input name ="username" type="text" required minlength="6">
+    </p>
+    <p>password:
+      <input id="password" name="pwd1" type="password" required minlength="6" maxlength="8">
+    </p>
+    <p>confirm: 
+      <input name="pwd2" type="password" equalTo="#password">
+    </p>
+    <p>
+      <input type="submit" value="enroll">
+    </p>
+  </form>
+      
+  <script type='text/javascript'>
+  // 聲明式驗證
+    $("#myform").validate({
+      messages:{
+        username:{
+          required:"username is nessary",
+          minlength:"at least 6 character"
+        },
+        pwd1:{
+          required:"password is nessary",
+          minlength:"at least 6 character",
+          maxlength:"less than 8 character"
+        },
+        pwd2:{
+          equal:"same as password"
+        }
+      }
+    });
+  </script>
+
+</body>
+</html>
