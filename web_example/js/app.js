@@ -26,6 +26,7 @@ $(function() {
     });
   }
 
+  // 二級菜單
   // id=category_items > class=cate_item > class=sub_cate_box
   function hoverSubMenu () {
     $("#category_items>div").hover(function(){
@@ -35,6 +36,7 @@ $(function() {
     })
   }
 
+  // 搜尋欄
   // focus _doKeyUp
   // id="search_helper" > class="search" > id="txtSearch"
   // jQuery on(events,[selector],[data],fn) 可以綁定多個事件監聽
@@ -53,7 +55,7 @@ $(function() {
 
   // id="shareMore" 
   // click event
-  // 
+  // 社群分享
   function share () {
     var isOpen = false;
     var $shareMore = $("#shareMore");
@@ -74,6 +76,7 @@ $(function() {
     })
   }
 
+  // 寄送地址
   // id="store_select"
   function address () {
     var $select = $("#store_select");
@@ -88,6 +91,7 @@ $(function() {
       });
   }
 
+  // 寄送地址切換欄
   // id="store_tabs"
   function clickTabs () {
     $("#store_tabs>li").click(function(){
@@ -96,6 +100,7 @@ $(function() {
     })
   }
 
+  // 加入購物車顯示/隱藏
   // id="minicart"
   function hoverMiniCart () {
     $("#minicart").hover(function(){
@@ -107,6 +112,7 @@ $(function() {
     });
   }
 
+  // 商品訊息切換欄
   // id="product_detail"
   function clickProductTabs () {
     var $lis = $("#product_detail>ul>li");
@@ -121,6 +127,7 @@ $(function() {
     })
   }
 
+  // 商品照片左右切換
   // id="preview"
   function moveMiniImg () {
     var $as = $("#preview>h1>a");
@@ -170,6 +177,7 @@ $(function() {
     })
   }
 
+  // 小圖與中圖設置同步
   function hoverMiniImg () {
     $("#icon_list>li").hover(function(){
       // this.children()[0].className = "hoveredThumb";
@@ -184,6 +192,7 @@ $(function() {
     })
   }
 
+  // 中圖與大圖設置同步
   // id="medimImgContainer" id="mask" id="maskTop" id="largeImgContainer" id="largeImg"
   function bigImg () {
     var $mediumImg = $("#mediumImg");
