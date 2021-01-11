@@ -177,7 +177,7 @@
 		function clickDelete (){
 			var $tr = $(this).parent().parent();
 			var name = $tr.children(":first").html();
-			if(confirm("are you sure to delete"+ name + "?")){
+			if(confirm("are you sure to delete "+ name + "?")){
 				$tr.remove()
 			}
 			return false;
