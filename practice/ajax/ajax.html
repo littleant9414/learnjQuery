@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>31ajax</title>
+  </head>
+  <body>
+    <input type="button" id="btn1" value="GET" />
+    <input type="button" id="btn2" value="POST" />
+    <input type="button" id="btn3" value="general" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script type="text/javascript">
+      /*
+       * $.ajax()
+       * $.get()
+       * $.post()
+       */
+
+      $("#btn1").click(function () {
+        $.get(
+          "http://127.0.0.1:8000/jquery",
+          { a: 100, b: 200, c: 300 },
+          function (data) {
+            console.log(data);
+          },
+          "json"
+        );
+      });
+
+      $("#btn2").click(function () {
+        $.post(
+          "http://127.0.0.1:8000/jquery",
+          { a: 100, b: 200, c: 300 },
+          function (data) {
+            console.log(data);
+          }
+        );
+      });
+
+      $("#btn3").click(function () {
+        $.ajax({
+          url: "http://127.0.0.1:8000/jquery",
+          data: { a: 100, b: 200 },
+          type: "GET",
+          dataType: "json",
+          // beforeSend、error、dataFilter、success、complete
+          success: function (data) {
+            console.log(data);
+          },
+          timeout: 2000,
+          error: function () {
+            console.log("error");
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
